@@ -9,8 +9,10 @@ import javax.imageio.ImageIO;
 public class ImageConverter {
 	/**
 	 * 
-	 * @param path: The path of the image to read
-	 * @return The pixel array
+	 * @param path
+	 * The path of the image to read
+	 * @return 
+	 * The pixel array
 	 */
 	public static int[][] convert(String path){
 		int [][] pix=null;
