@@ -2,10 +2,13 @@ import java.awt.image.BufferedImage;
 
 import java.awt.Color;
 import java.awt.Graphics;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class OvalPanelCanvas extends JPanel {
+	
+	private static int posX=0;
 
 	public OvalPanelCanvas() {
 		
@@ -19,7 +22,8 @@ public class OvalPanelCanvas extends JPanel {
 	    g.fillRect(0, 0, width, height);
 	    g.setColor(Color.white);
 	    g.drawOval(0, 0, width, height);
-	    g.drawString("Hello world! ", 75, 75);
+	    g.drawString("Hello world! ", posX, 75);
+	    posX+=100;
 	  }
 	
 	/**
@@ -29,7 +33,8 @@ public class OvalPanelCanvas extends JPanel {
 		// TODO Auto-generated method stub
 		JFrame frame = new JFrame("Oval Sample");
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    frame.add(new OvalPanelCanvas());
+	    OvalPanelCanvas tmp = new OvalPanelCanvas();
+	    frame.add(tmp);
 	    frame.setSize(300, 200);
 	    frame.setVisible(true);
 	    
