@@ -1,3 +1,5 @@
+import java.awt.image.BufferedImage;
+
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -17,6 +19,8 @@ public class OvalPanelCanvas extends JPanel {
 	    int width = getWidth();
 	    int height = getHeight();
 	    g.setColor(Color.black);
+	    g.fillRect(0, 0, width, height);
+	    g.setColor(Color.white);
 	    g.drawOval(0, 0, width, height);
 	    g.drawString("Hello world! ", posX, 75);
 	    posX+=100;
@@ -33,10 +37,6 @@ public class OvalPanelCanvas extends JPanel {
 	    frame.add(tmp);
 	    frame.setSize(300, 200);
 	    frame.setVisible(true);
-	    
-//	    posX=100;
-	    tmp.paintComponent(tmp.getGraphics());
-	    
 	}
 
 }
