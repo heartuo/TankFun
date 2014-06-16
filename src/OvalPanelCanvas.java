@@ -37,15 +37,6 @@ public class OvalPanelCanvas extends JPanel {
 	    frame.add(tmp);
 	    frame.setSize(300, 200);
 	    frame.setVisible(true);
-	    
-	    BufferedImage image = ImageConverter.readBufferedImage("assets/images/watch_dog.png");
-	    int[][] test = ImageConverter.to2DArray(image);
-	    for (int j = 0; j < test[0].length; j++) {
-	    	for (int i = 0; i < test.length; i++) {
-	    		System.out.printf("%X ", test[i][j]);
-	    	}
-	    	System.out.println();
-	    }
 	}
 
 }
