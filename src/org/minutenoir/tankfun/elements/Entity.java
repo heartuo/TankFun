@@ -68,6 +68,43 @@ public abstract class Entity {
 		return height;
 	}
 	
+	
+	public int[][] getRotated(Rotation degree){
+		int[][] result=null;
+		switch(degree){
+		case DEG_0:
+			result=image;
+			break;
+		case DEG_90:
+			result=new int[image[0].length][image.length];
+			for(int i=0; i<image.length; i++){
+				for(int j=0; j<image[0].length; j++){
+					result[j][image.length-i]=image[i][j];
+				}
+			}
+			break;
+		case DEG_180:
+			result=new int[image.length][image[0].length];
+			for(int i=0; i<image.length; i++){
+				for(int j=0; j<image[0].length; j++){
+					result[image.length-i][image[0].length-j]=image[i][j];
+				}
+			}
+			break;
+		case DEG_270:
+			result=new int[image[0].length][image.length];
+			for(int i=0; i<image.length; i++){
+				for(int j=0; j<image[0].length; j++){
+					result[image[0].length-j][i]=image[i][j];
+				}
+			}
+			break;
+		}
+		
+		
+		return result;
+	}
+	
 	/**
 	 * 
 	 * @param imagePath
@@ -95,4 +132,12 @@ public abstract class Entity {
 		X=posX;
 		Y=posY;
 	}
+	
+	
+	/**
+	 * 
+	 *The rotation that can be performed
+	 *
+	 */
+	public static enum Rotation{DEG_0, DEG_90, DEG_180, DEG_270};
 }
